@@ -1,4 +1,13 @@
 <p>Inbox<p>
-<% @notes.each do |note| %>
-  <li><%= link_to note.text, note_path(note) %></li>
-<%end %>
+<div class = "notes-container">
+  <div class="d-flex justify-content-center pt-5 mt-5">
+  <% @notes.each do |note|%>
+    <div class="note">
+      <img src="https://images.unsplash.com/photo-1672745256937-4e60a4534413?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1088&q=80" >
+      <div class="text">
+       <%= link_to note.text, note_path(note)%>
+      </div>
+    </div>
+  <% end %>
+
+</div>

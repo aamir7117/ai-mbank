@@ -50,10 +50,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_154748) do
 
   create_table "notes", force: :cascade do |t|
     t.text "text"
-    t.binary "audio"
-    t.boolean "archived"
+    t.boolean "archived", default: false
     t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_notes_on_category_id"
@@ -62,10 +61,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_154748) do
 
   create_table "reminders", force: :cascade do |t|
     t.datetime "date_time"
-    t.bigint "user_id", null: false
+    t.bigint "note_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_reminders_on_user_id"
+    t.index ["note_id"], name: "index_reminders_on_note_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -84,5 +83,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_154748) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "notes", "categories"
   add_foreign_key "notes", "users"
-  add_foreign_key "reminders", "users"
+  add_foreign_key "reminders", "notes"
 end
