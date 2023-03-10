@@ -1,3 +1,5 @@
+<%# plugins %>
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
 
 <%# this is a img button  %>
 <div class="nav d-flex profile justify-content-between align-items-center">
@@ -79,17 +81,20 @@
 <!-- Modal bootstrap #2 - voice recording confirmation -->
 <div class="modal fade" id="exampleModalReminder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content-note w-100">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title-new" id="exampleModalLabel">Note Saved!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" style='color: white;'>
-        <p>✅ your note was saved!</p>
-        <p>Go on and live your best life</p>
+        <%#= simple_form_for [@note, @reminder] do |f|  %>
+        <%#= f.input :date_time, as: :datetime-local %>
+        <%#= f.button :submit, value: "Set Reminder" %>
+        <%#= end %>
       </div>
+
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">Delete note</button>
       </div>
     </div>
   </div>
