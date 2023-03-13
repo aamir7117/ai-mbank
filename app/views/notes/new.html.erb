@@ -1,16 +1,17 @@
 
 <%# this is a img button  %>
-<div class="nav d-flex profile justify-content-between align-items-center">
-  <button class="button-85"><%= link_to "Inbox", notes_path %></button>
 
-  <div class="image_outer_container">
-    <div class="image_inner_container">
+   <div class="nav d-flex profile justify-content-between align-items-center">
+    <button class="button-85"><%= link_to "Inbox", notes_path, class: "btn btn-default"  %></button>
+
+    <div class="avatar border-radius">
+      <div class="grad border-radius spin"></div>
       <button type="button" data-toggle="modal" data-target="#exampleModalCenter">
-        <img src="https://avatars.githubusercontent.com/u/56178404?v=4">
+        <img src="https://lh3.googleusercontent.com/a/AGNmyxYdZLRF4ONYN4IMCGDLA5-rxxvVnuPRAPAYI3op9Q=s192-c-rg-br100" class="avatar-img border-radius" />
       </button>
+      </a>
     </div>
   </div>
-</div>
 
 
 <%# this is a background img %>
@@ -161,3 +162,5 @@
         })
     });
 </script>
+
+
